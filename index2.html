@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        footer { background: #333; color: white; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; }
+        .main-layout { display: flex; min-height: 80vh; }
+        aside { background: #f4f4f4; width: 200px; padding: 20px; border-right: 1px solid #ddd; }
+        aside ul { list-style: none; padding: 0; }
+        aside li { margin-bottom: 10px; }
+        aside a { color: #007bff; text-decoration: none; }
+        article { flex: 1; padding: 20px; }
+        article img { max-width: 100%; border-radius: 8px; margin-top:165px; }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script type="text/babel">
+    const container = document.getElementById('app');
+
+
+    const Header = () => {
+        return (
+            <header>
+                <h1>React</h1>
+            </header>
+        );
+    };
+
+    const Sidebar = () => {
+        return (
+            <aside>
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about Us</a></li>
+                    <li><a href="#">contacts</a></li>
+                </ul>
+            </aside>
+        );
+    };
+
+    const Content = () => {
+        return (
+            <article>
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate atque quae magnam ducimus asperiores unde aliquam quos fuga provident, similique omnis consequatur nulla aliquid, ratione officia, hic esse voluptas.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, cupiditate.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, commodi.</p>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                    alt="React Logo"
+                    style={{ width: '100px' }}/>
+            </article>
+        );
+    };
+
+    const Footer = () => {
+        return (
+            <footer>
+                <p>&copy; 2026 hw50</p>
+            </footer>
+        );
+    };
+
+    const Page = (
+        <div>
+            <Header />
+            <div className="main-layout">
+                <Sidebar />
+                <Content />
+            </div>
+            <Footer />
+        </div>
+    );
+
+    ReactDOM.createRoot(container).render(Page);
+
+</script>
+
+</body>
+</html>
